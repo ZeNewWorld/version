@@ -8,7 +8,7 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
 function setToken() {
  document.cookie="token=" + document.getElementById("token").value;
  alert("Token set successfully. Redirecting when you hit OK.");
- window.location="https://zenewworld.github.io/modify_changelog_2.html";
+ window.location.assign("https://zenewworld.github.io/modify_changelog_2.html");
 }
 </script></head>
 <body>
