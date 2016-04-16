@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta name="robots" content="noindex">
+<script>
+var host = "zenewworld.github.io";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+function setToken() {
+ 
+ document.cookie="token=" + document.getElementById("token").value;
+}
+</script></head>
+<body>
+<form onSubmit="setToken();alert('Token set successfully. Redirecting when you hit OK.');window.location=https://zenewworld.github.io/modify_changelog_2.html" autocomplete=false>
+<input type="text" id="token" placeholder="Access Token">
+</form>
+</body>
+</html>
