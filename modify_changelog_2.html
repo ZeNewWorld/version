@@ -1,7 +1,20 @@
 <html><head><script src="https://raw.githubusercontent.com/michael/github/master/dist/github.min.js"></script>
+<script>
+  var github = new Github({
+  token: document.cookie,
+  auth: "oauth"
+});
+var repo = github.getRepo("ZeNewWorld", "version");
+var currentStoredChangelog = null;
+repo.read('master', 'changelog.txt', function(err, data) {currentStoredChangelog = data;});
+document.getElementById("changelog_input").value = currentStoredChangelog;
+</script>
 <meta name="robots" content="noindex">
 </head>
 <body>
-
+<form id="changelog">
+  <input type="submit">
+</form>
+<textarea name="changelog" form="changelog" id="changelog_input"></textarea>
 </body>
 </html>
