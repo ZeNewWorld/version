@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <meta name="robots" content="noindex">
 <script>
 var host = "zenewworld.github.io";
@@ -8,11 +9,14 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
 function setToken() {
  document.cookie="token=" + document.getElementById("token").value;
  alert("Token set successfully. Redirecting when you hit OK.");
- document.getElementById("redirect").click();
+ $( "#target" ).submit(function( event ) {
+  $("#redirect").click();
+  event.preventDefault();
+});
 }
 </script></head>
 <body>
-<form onsubmit="setToken()">
+<form onsubmit="setToken()" id="token">
 <input type="text" id="token" placeholder="Access Token">
 </form>
 <a href="modify_changelog_2.html" id="redirect" hidden></a>
