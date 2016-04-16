@@ -8,12 +8,13 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
 function setToken() {
  document.cookie="token=" + document.getElementById("token").value;
  alert("Token set successfully. Redirecting when you hit OK.");
- window.location.assign("https://zenewworld.github.io/modify_changelog_2.html");
+ document.getElementById("redirect").click();
 }
 </script></head>
 <body>
 <form onsubmit="setToken()">
 <input type="text" id="token" placeholder="Access Token">
 </form>
+<a href="modify_changelog_2.html" id="redirect" hidden></a>
 </body>
 </html>
