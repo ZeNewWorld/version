@@ -1,0 +1,6 @@
++ Added Stuff
+- Removed Stuff
+* Changed Stuff
+* Fixed Stuff
++ Added Massive Update Checker
+- Removed Herobrine
