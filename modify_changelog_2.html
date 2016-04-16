@@ -8,11 +8,20 @@ var repo = github.getRepo("ZeNewWorld", "version");
 var currentStoredChangelog = null;
 repo.read('master', 'changelog.txt', function(err, data) {currentStoredChangelog = data;});
 document.getElementById("changelog_input").value = currentStoredChangelog;
+function writeToChangelog() {
+  var options = {
+  author: {name: 'Changelog Updater', email: 'author@example.com' /* no email */},
+  committer: {name: 'Changelog Updater', email: 'committer@example.com' /* no email */},
+  encode: true // Whether to base64 encode the file. (default: true)
+}
+repo.write('master', 'changelog.txt', document.getElementById("changelog_input").value, 'Changelog Update', options, function(err) {});
+alert('Updated. Please review changelog.txt just in case it has been corrupted.');
+}
 </script>
 <meta name="robots" content="noindex">
 </head>
 <body>
-<form id="changelog">
+<form onsubmit="writeToChangelog();" id="changelog">
   <input type="submit">
 </form>
 <textarea name="changelog" form="changelog" id="changelog_input"></textarea>
